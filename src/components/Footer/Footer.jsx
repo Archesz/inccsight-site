@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer-left">
-          <p>© {new Date().getFullYear()} InCCsight. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} InCCsight. All rights reserved.</p>
         </div>
         <div className="footer-right">
           <a href="https://github.com/usuario/inccsight" target="_blank" rel="noopener noreferrer" aria-label="GitHub">

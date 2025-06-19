@@ -1,44 +1,57 @@
-import { FaBrain, FaChartBar, FaBalanceScale, FaFilePdf, FaMobileAlt, FaGithub  } from 'react-icons/fa';
+import { FaBrain, FaChartBar, FaBalanceScale, FaFilePdf, FaMobileAlt, FaGithub } from 'react-icons/fa';
+import { Md3dRotation } from "react-icons/md";
+import { AiFillExperiment } from "react-icons/ai";
+
 import { motion } from 'framer-motion';
 import '../styles/Features.scss';
 
 const featuresList = [
   {
     icon: <FaBrain />,
-    title: 'Visualização interativa',
-    description: 'Interaja e explore imagens cerebrais detalhadamente.',
+    title: 'Interactive Visualization',
+    description: 'Interact with and explore detailed brain images.',
   },
   {
     icon: <FaChartBar />,
-    title: 'Extração de métricas',
-    description: 'Obtenha métricas morfométricas precisas do corpo caloso.',
+    title: 'Metric Extraction',
+    description: 'Obtain precise morphometric metrics of the corpus callosum.',
   },
   {
     icon: <FaBalanceScale />,
-    title: 'Comparação de dados',
-    description: 'Compare seus resultados com bases de referência confiáveis.',
+    title: 'Data Comparison',
+    description: 'Compare your results with reliable reference datasets.',
   },
   {
     icon: <FaFilePdf />,
-    title: 'Relatórios customizáveis',
-    description: 'Gere relatórios em PDF e CSV para análises e apresentações.',
+    title: 'Customizable Reports',
+    description: 'Generate PDF and CSV reports for analysis and presentations.',
   },
   {
     icon: <FaMobileAlt />,
-    title: 'Interface responsiva',
-    description: 'Use o software em diferentes dispositivos com interface moderna.',
+    title: 'Responsive Interface',
+    description: 'Use the software on multiple devices with a modern interface.',
   },
   {
-    icon: <FaGithub  />,
-    title: 'Código Aberto',
-    description: 'Adapte, implemente e crie novas soluções através do nosso github.',
+    icon: <FaGithub />,
+    title: 'Open Source',
+    description: 'Adapt, implement, and create new solutions through our GitHub.',
+  },
+  {
+    icon: <Md3dRotation />,
+    title: '3D Visualization',
+    description: 'Visualize the Corpus Callosum in real-time 3D format.',
+  },
+  {
+    icon: <AiFillExperiment />,
+    title: 'New Methods Integration',
+    description: 'Implement and test your own segmentation or parcelation methods and compare them.',
   },
 ];
 
 export default function Features() {
   return (
     <section className="features" id="features">
-      <h2>Funcionalidades</h2>
+      <h2>Features</h2>
       <div className="features-grid">
         {featuresList.map(({ icon, title, description }, idx) => (
           <motion.div

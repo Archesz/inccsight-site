@@ -11,12 +11,12 @@ export default function Download() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h2>Baixe agora</h2>
-        <p>Escolha a versão para o seu sistema operacional e comece a usar o InCCsight.</p>
+        <h2>Download Now</h2>
+        <p>Choose the version for your operating system and start using InCCsight.</p>
         <div className="buttons">
-          <a href="/downloads/inccsight-win.exe" className="btn-filled">Windows</a>
-          <a href="/downloads/inccsight-linux.AppImage" className="btn-filled">Linux</a>
-          <a href="/downloads/inccsight-mac.dmg" className="btn-filled">Mac</a>
+          <a href="/downloads/inccsight-win.exe" className="btn-filled" onClick={() => {alert("Falta validar")}}>Windows</a>
+          <a href="/downloads/inccsight-linux.AppImage" className="btn-filled" onClick={() => {alert("Falta validar")}}>Linux</a>
+          <a href="/downloads/inccsight-mac.dmg" className="btn-filled" onClick={() => {alert("Falta validar")}}>Mac</a>
         </div>
       </motion.div>
     </section>

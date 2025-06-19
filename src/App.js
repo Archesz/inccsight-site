@@ -9,6 +9,7 @@ import About from './Pages/About'
 import Features from './Pages/Features'
 import Download from './Pages/Download'
 import Footer from './components/Footer/Footer'
+import Papers from "./components/Papers/Papers";
 
 
 
@@ -24,6 +25,7 @@ export default function App() {
       <Header />
       <Hero />
       <About />
+      <Papers />
       <Features />
       <Download />
       <Footer />
