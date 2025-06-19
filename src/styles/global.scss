@@ -1,0 +1,14 @@
+// styles/_variables.scss
+$primary: #3C9EE7;
+$dark: #1F3A5F;
+$light: #F5F7FA;
+$text: #1F1F1F;
+
+// styles/_mixins.scss
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  color: #1F1F1F;
+}
