@@ -1,76 +1,95 @@
 .hero {
   position: relative;
-  height: 100vh;
-  color: white;
+  min-height: 100vh;
+  color: var(--text);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(108, 123, 255, 0.16), transparent 70%),
+    radial-gradient(70% 60% at 50% 100%, rgba(47, 224, 196, 0.12), transparent 70%),
+    var(--bg);
+  padding-top: 4rem;
 
   .hero-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    inset: 0;
     z-index: 0;
-    filter: brightness(0.4) contrast(1);
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .hero-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(60% 55% at 50% 45%, transparent 40%, var(--bg) 92%);
   }
 
   .content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
+    max-width: 760px;
     padding: 2rem;
+  }
 
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      letter-spacing: 1px;
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 1.75rem;
+
+    span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: var(--font-heading);
+      letter-spacing: 0.03em;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
     }
+  }
 
-    p {
-      font-size: 1rem;
-      margin-bottom: 2.5rem;
-      color: #e6f2ff;
-      line-height: 1.6;
-    }
+  h1 {
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    margin: 0 0 0.75rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    background: linear-gradient(120deg, #fff 20%, var(--primary) 60%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
+  .tagline {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 0 0 1.25rem;
+  }
 
-      a {
-        padding: 0.9rem 2rem;
-        font-size: 1rem;
-        font-weight: 600;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
+  .description {
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
 
-      .btn-outline {
-        border: 2px solid #43c6ac;
-        color: #43c6ac;
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
 
-        &:hover {
-          background-color: #43c6ac;
-          color: #1f3a5f;
-        }
-      }
-
-      .btn-filled {
-        background-color: #43c6ac;
-        color: #1f3a5f;
-
-        &:hover {
-          background-color: #3cbba1;
-        }
-      }
+  @media (max-width: 640px) {
+    .hero-bg {
+      opacity: 0.55;
     }
   }
 }

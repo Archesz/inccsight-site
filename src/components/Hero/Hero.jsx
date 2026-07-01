@@ -1,30 +1,41 @@
 import './Hero.scss';
-import video from '../../assets/brain_cc.mp4';
+import { FaGithub, FaDocker } from 'react-icons/fa';
+import BrainCCScene from '../BrainCCScene/BrainCCScene';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
-    <section className="hero">
-      <video
-        className="hero-bg"
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source src={video} type="video/mp4" />
-        Your browser does not support background video.
-      </video>
+    <section className="hero" id="top">
+      <div className="hero-bg">
+        <BrainCCScene />
+      </div>
+      <div className="hero-vignette" />
 
       <div className="content">
-        <h1>InCCsight</h1>
-        <p>
-          A cutting-edge desktop application designed for detailed analysis and visualization of the corpus callosum
-          using advanced Diffusion Tensor Imaging (DTI) techniques. InCCsight provides researchers and healthcare
-          professionals with interactive tools to explore brain connectivity with precision and ease.
-        </p>
+        <div className="badges">
+          <span>{t.hero.badgeOpenSource}</span>
+          <span>{t.hero.badgeLocal}</span>
+          <span>{t.hero.badgeMethods}</span>
+        </div>
+
+        <h1>{t.hero.title}</h1>
+        <p className="tagline">{t.hero.tagline}</p>
+        <p className="description">{t.hero.description}</p>
+
         <div className="buttons">
-          <a href="https://github.com/MICLab-Unicamp/inccsight/tree/inccsight-v2.0" className="btn-outline">View on GitHub</a>
-          <a href="/downloads/inccsight-setup.exe" className="btn-filled" onClick={() => {alert("Falta validar")}}>Download</a>
+          <a href="#download" className="btn btn-filled">
+            <FaDocker /> {t.hero.ctaPrimary}
+          </a>
+          <a
+            href="https://github.com/MICLab-Unicamp/inccsight"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline"
+          >
+            <FaGithub /> {t.hero.ctaSecondary}
+          </a>
         </div>
       </div>
     </section>

@@ -1,14 +1,152 @@
-// styles/_variables.scss
-$primary: #3C9EE7;
-$dark: #1F3A5F;
-$light: #F5F7FA;
-$text: #1F1F1F;
+// ─── inCCsight design tokens ──────────────────────────────────────────────
+// Palette is anchored to the DTI direction-encoded color map used throughout
+// the app itself (red = left-right, green = anterior-posterior, blue =
+// superior-inferior fiber orientation) layered on a deep neuro-imaging navy.
+:root {
+  --bg: #060a13;
+  --bg-alt: #0a1220;
+  --bg-alt-2: #0d1830;
+  --surface: #101b30;
+  --surface-2: #142344;
+  --border: rgba(255, 255, 255, 0.08);
 
-// styles/_mixins.scss
+  --text: #eef3fb;
+  --text-dim: #a7b6cf;
+  --text-faint: #6f80a0;
+
+  --primary: #2fe0c4;
+  --primary-dim: #1b9c88;
+  --secondary: #6c7bff;
+  --accent-pink: #ff5f96;
+
+  --dti-red: #ff5b6a;
+  --dti-green: #4ee08a;
+  --dti-blue: #4c8dff;
+
+  --light-bg: #f6f8fc;
+  --light-surface: #ffffff;
+  --light-text: #101b30;
+  --light-text-dim: #47547a;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow-glow: 0 0 40px rgba(47, 224, 196, 0.25);
+  --container-w: 1160px;
+
+  --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff;
-  box-sizing: border-box;
-  color: #1F1F1F;
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1rem;
+
+  &::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--dti-red), var(--dti-green), var(--dti-blue));
+    border-radius: 2px;
+  }
+}
+
+.section-head {
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+  border: none;
+
+  &.btn-filled {
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    color: #06111f;
+    box-shadow: 0 10px 30px rgba(47, 224, 196, 0.25);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(47, 224, 196, 0.4);
+    }
+  }
+
+  &.btn-outline {
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.03);
+
+    &:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+::selection {
+  background: var(--primary);
+  color: #06111f;
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
 }

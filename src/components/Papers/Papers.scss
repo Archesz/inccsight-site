@@ -1,31 +1,44 @@
 .papers {
-  padding: 6rem 2rem;
-  background-color: #f5f9ff;
-  color: #1f3a5f;
+  padding: 7rem 2rem;
+  background: var(--bg);
+  color: var(--text);
   text-align: center;
 
   .container {
-    max-width: 900px;
+    max-width: 780px;
     margin: 0 auto;
   }
 
   h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
     font-weight: 700;
+  }
+
+  .lead {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
   }
 
   ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 
     .paper-item {
-      margin-bottom: 1.8rem;
+      text-align: left;
+      padding: 1.5rem 1.75rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
 
       a {
-        color: #43c6ac;
+        color: var(--primary);
         font-weight: 600;
-        font-size: 1.15rem;
+        font-size: 1.05rem;
         text-decoration: none;
 
         &:hover {
@@ -34,9 +47,9 @@
       }
 
       p {
-        margin-top: 0.3rem;
-        font-size: 1rem;
-        color: #324e70;
+        margin-top: 0.5rem;
+        font-size: 0.92rem;
+        color: var(--text-faint);
       }
     }
   }

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import './Papers.scss';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 const papers = [
   {
@@ -17,6 +18,9 @@ const papers = [
 ];
 
 export default function Papers() {
+  const { t } = useLanguage();
+  const p = t.papers;
+
   return (
     <section className="papers" id="papers">
       <motion.div
@@ -26,7 +30,9 @@ export default function Papers() {
         transition={{ duration: 1 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <h2>Publications</h2>
+        <span className="eyebrow">{p.eyebrow}</span>
+        <h2>{p.title}</h2>
+        <p className="lead">{p.description}</p>
         <ul>
           {papers.map(({ title, authors, year, url }, index) => (
             <li key={index} className="paper-item">

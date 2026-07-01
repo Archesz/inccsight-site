@@ -1,21 +1,29 @@
 .footer {
-  background-color: #0c0c0c;
-  color: #a3c9bf;
-  padding: 1.5rem 2rem;
-  font-size: 0.9rem;
+  background-color: var(--bg);
+  color: var(--text-faint);
+  padding: 2rem;
+  font-size: 0.88rem;
+  border-top: 1px solid var(--border);
 
   .container {
-    max-width: 1200px;
+    max-width: var(--container-w);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .footer-left {
     p {
       margin: 0;
+    }
+
+    .built-by {
+      margin-top: 0.3rem;
+      font-size: 0.82rem;
+      color: var(--text-faint);
     }
   }
 
@@ -24,12 +32,12 @@
     gap: 1.5rem;
 
     a {
-      color: #a3c9bf;
+      color: var(--text-dim);
       font-size: 1.3rem;
       transition: color 0.3s ease;
 
       &:hover {
-        color: #43c6ac;
+        color: var(--primary);
       }
     }
   }
